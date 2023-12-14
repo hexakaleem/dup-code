@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c3b8a512-4b0e-4134-93d0-9c02883de000" name="waveadmin">
+        <fileTransfer rootFolder="/home/ubuntu/adminpanel" accessType="SFTP" host="40.88.121.201" port="22" sshConfigId="cac2858b-9d18-4e20-9632-6e73c5d2f183" sshConfig="ubuntu@40.88.121.201:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

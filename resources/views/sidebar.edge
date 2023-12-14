@@ -1,0 +1,91 @@
+<div class="app-sidebar sidebar-shadow bg-dark sidebar-text-light">
+    <div class="scrollbar-sidebar">
+        <div class="app-sidebar__inner">
+            <ul class="vertical-nav-menu">
+                <li class="app-sidebar__heading">Menu</li>
+                <li  class="{{ request.url().includes('/assignments') ? 'mm-active' : '' }}">
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-rocket"></i>
+                        Assignments
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/assignments/dashboard"  class="{{ request.url()  == '/assignments/dashboard' ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>
+                                Assignment Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/assignments/manage"class="{{  request.url()  == '/assignments/manage' ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Manage Assignments
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/assignments/create" class="{{  request.url()  == '/assignments/create' ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Create New Assignment
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li  class="{{ request.url().includes('/plagiarism') ? 'mm-active' : '' }}">
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-browser"></i>
+                        Plagiarism Detection
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/plagiarism/checker" class="{{  request.url()  == '/plagiarism/checker' ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>
+                                Plagiarism Checker
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/plagiarism/reports" class="{{  request.url()  =='/plagiarism/reports' ? 'mm-active' : '' }}">
+                                <i class="metismenu-icon"></i>Plagiarism Reports
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li  class="{{ request.url().includes('/settings') ? 'mm-active' : '' }}">
+                    <a href="/settings" class="{{  request.url()  == '/settings' ? 'mm-active' : '' }}">
+                        <i class="metismenu-icon pe-7s-config"></i>
+                        Settings
+                    </a>
+                </li>
+                <li class="{{ request.url().includes('/profile') ? 'mm-active' : '' }}">
+                    <a href="/profile">
+                        <i class="metismenu-icon pe-7s-user"></i>
+                        Profile
+                    </a>
+                </li>
+                <li class="{{ request.url().includes('/applications') ? 'mm-active' : '' }}">
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-plugin"></i>
+                        Applications
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="apps-mailbox.html">
+                                <i class="metismenu-icon"></i>Mailbox
+                            </a>
+                        </li>
+                        <li>
+                            <a href="apps-chat.html">
+                                <i class="metismenu-icon"></i>Chat
+                            </a>
+                        </li>
+                        <li>
+                            <a href="apps-faq-section.html">
+                                <i class="metismenu-icon"></i>FAQ Section
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Other menu options or functionalities can be added similarly -->
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+@layout('layout')
+@section('title')
+Devices
+@end
+@section('content')
+<div class="app-main__inner">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-car icon-gradient bg-mean-fruit">
+                    </i>
+                </div>
+                <div> Dashboard
+                    <div class="page-title-subheading">Devices > Index.  </div>
+                </div>
+            </div>
+           </div>
+    </div>
+    <div class="tabs-animation">
+      <div class="mb-3 card">
+          <div class="card-header-tab card-header">
+              <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                  <i class="header-icon lnr-charts icon-gradient bg-happy-green"> </i>
+                  Devices
+              </div>
+              <div class="btn-actions-pane-right text-capitalize">
+                  <button class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm">
+                 <a href="/devices/add" class="text-decoration-none"> Add New</a>
+                  </button>
+              </div>
+          </div>
+          <div class="no-gutters row">
+              <div class="col-12 p-3">
+                  <table class="table table-bordered">
+                    <thead>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Device Id</th>
+                    <th>IMEI</th>
+                    <th>GRAI</th>
+                    <th>User Id</th>
+                    <th>Enabled?</th>
+                    <th>Date</th>
+                    </thead>
+                    <tbody>
+                    @each(device in devices)
+                       <tr>
+                       <td>{{ device.id }}</td>
+                       <td>{{ device.name }}</td>
+                       <td>{{ device.device_id }}</td>
+                       <td>{{ device.imei }}</td>
+                       <td>{{ device.grai }}</td>
+                       <td>{{ device.user_id }}</td>
+                       <td>{{ device.enabled }}</td>
+                       <td>{{ device.createdAt   }}</td>
+                       </tr>
+                     @endeach
+
+                    </tbody>
+                  </table>
+
+                  <hr>
+
+                  <div>
+                  <nav class="pagination-rounded">
+
+                  <ul class="pagination">
+
+                    @each(anchor in devices.getUrlsForRange(1, devices.lastPage))
+
+                    <li class="page-item">
+                       <a href="/clients{{ anchor.url }}" class="page-link">{{ anchor.page }}</a>
+                    </li>
+
+                    @endeach
+                    </ul>
+
+                    </nav>
+                  </div>
+              </div>
+          </div>
+          <div class="text-center d-block p-3 card-footer">
+
+          </div>
+      </div>
+  </div>
+</div>
+
+@end

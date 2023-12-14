@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Add any additional stylesheets or scripts you need -->
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Rest password</div>
+                    <div class="card-body">
+                        <!-- Display errors here -->
+                       @if (flashMessages.has('error'))
+                         <div role="alert" class="text-danger">
+                           {{ flashMessages.get('error') }}
+                         </div>
+                       @endif
+
+                       @if(flashMessages.has('success'))
+                       <h4>Password has been successfully sent.</h4>
+                       @else
+
+                        <!-- Your login form goes here -->
+                        <form method="POST" action="/reset-password">
+                            {{ csrfField() }}
+                            <div class="form-group">
+                                <label for="token">Token:</label>
+                                <input type="text" name="token" id="token" class="form-control" required value="{{ flashMessages.get('token','')}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" name="password" id="password" class="form-control" required >
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm_password">Confirm Password:</label>
+                                <input type="password" name="confirm_password" id="confirm_password" class="form-control" required >
+                            </div>
+                            <button type="submit" class="btn btn-primary">Reset</button>
+                        </form>
+                       @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
