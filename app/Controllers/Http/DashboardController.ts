@@ -11,6 +11,7 @@ export default class DashboardController {
 
     })
   }
+
   async plagiarism({ view }) {
 
     const files = await File.all();
@@ -21,4 +22,12 @@ export default class DashboardController {
 
   }
 
+  async report({ view }) {
+
+
+    return view.render('report', {
+
+     })
+
+  }
 }

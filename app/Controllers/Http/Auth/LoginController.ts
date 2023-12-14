@@ -16,7 +16,7 @@ export default class LoginController {
      let au= await auth.use("web").attempt(email, password)
       console.log(au)
       // otherwise, redirect to home page
-      return response.redirect('/dashboard')
+      return response.redirect('/assignments/dashboard')
     } catch (error) {
       // if login fails, return vague form message and redirect back
       session.flash('form', 'Your username, email, or password is incorrect')

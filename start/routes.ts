@@ -24,7 +24,7 @@ Route.get('/', async ({  auth,response }) => {
 
   let isLoggedin =await auth.check()
   if(isLoggedin){
-    return response.redirect().toPath("/dashboard")
+    return response.redirect().toPath("/assignments/dashboard")
   }
   else{
     return response.redirect().toPath("/login")
@@ -45,11 +45,12 @@ Route.post("/reset-password",'Auth/AuthController.updatePasswordWithToken')
 
 
 Route.group(() => {
-  Route.get('/assignments/dashboard','DashboardController.index')
+  Route.get('/assignments/dashboard','DashboardController.index').as("Dashbaord")
 
   Route.get('/plagiarism/checker','DashboardController.plagiarism')
+  Route.get('/plagiarism/reports','DashboardController.report')
   Route.post('/plagiarism/checker/upload', 'FileUploadController.upload')
-
+  Route.delete('/plagiarism/checker/delete/:id', 'FileUploadController.delete');
   Route.get('/clients','ClientsController.index')
   Route.get('/clients/add','ClientsController.add')
   Route.post('/clients/add','ClientsController.store')

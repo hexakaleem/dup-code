@@ -19,52 +19,113 @@ Teacher Portal
             <!-- Remove the existing buttons or replace them with teacher-specific functionalities -->
         </div>
     </div>
- <!-- File Upload Section -->
-    <div class="tabs-animation">
-        <div class="mb-3 card">
-            <div class="card-header-tab card-header">
-                <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-                    <i class="header-icon lnr-cloud-upload icon-gradient bg-arielle-smile"> </i>
-                    File Upload
-                </div>
-            </div>
-            <div class="card-body">
-                <!-- Form for File Upload -->
-                <form action="/plagiarism/checker/upload" method="post" enctype="multipart/form-data">
-                    {{ csrfField() }}
-                    <input type="file" id="files"  name="files[]" multiple>
-                    <button type="submit">Upload</button>
-                </form>
+<div class="tabs-animation">
+    <div class="mb-3 card">
+        <div class="card-header-tab card-header">
+            <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                <i class="header-icon lnr-cloud-upload icon-gradient bg-arielle-smile"> </i>
+                File Upload
             </div>
         </div>
+        <div class="card-body d-flex flex-column align-items-center">
+            <!-- Form for File Upload -->
+            <form action="/plagiarism/checker/upload" method="post" enctype="multipart/form-data" class="d-flex flex-column align-items-center">
+                {{ csrfField() }}
+                <input class="mb-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-info drop-area" type="file" id="files"  name="files[]" multiple>
+                <!-- Center-aligned and responsive button within the form -->
+                <button class="mb-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-info btn-responsive" type="submit">
+                    <i class="lnr-paperclip btn-icon-wrapper"></i>
+                    Add to List
+                </button>
+            </form>
+        </div>
     </div>
-   <!-- Display List of Uploaded Files -->
+</div>
+  <div class="row">
+   <!-- Section for generating report -->
+        <div class="col-md-4">
+            <div class="mb-3 card">
+                <div class="card-header-tab card-header">
+                    <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                        <i class="header-icon lnr-hourglass icon-gradient bg-arielle-smile"></i>
+                        Generate Report
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!-- Progress bar for report generation -->
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                    </div>
+                    <!-- Button for viewing report (hidden by default) -->
+                    <button class="btn btn-primary btn-block" style="">Generate Report</button>
+                </div>
+            </div>
+        </div>
+
+          <div class="col-md-8">
+    <!-- Display List of Uploaded Files -->
 <div class="tabs-animation">
-   <div class="mb-3 card">
-       <div class="card-header-tab card-header">
-           <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-               <i class="header-icon lnr-list icon-gradient bg-happy-green"> </i>
-               List of Uploaded Files
-           </div>
-       </div>
-       <div class="card-body">
-           <div id="selectedFiles">
-               @each(file in uploadedFiles)
-                  <div>
-                      <span>{{ file.name }}</span>
-                      <button onclick="deleteFile('{{ file.id }}')">Delete</button>
-                  </div>
-               @endeach
-           </div>
-           @if (flashMessages.has('success'))
-               <div role="alert" class="text-danger">
-                  {{ flashMessages.get('success') }}
-               </div>
-           @endif
-       </div>
-   </div>
+    <div class="mb-3 card">
+        <div class="card-header-tab card-header">
+            <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                <i class="header-icon lnr-list icon-gradient bg-happy-green"></i>
+                List of Uploaded Files
+            </div>
+        </div>
+        <div class="card-body">
+            @if (uploadedFiles.length > 0)
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>File Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @each(file in uploadedFiles)
+                            <tr>
+                                <td>{{ file.name }}</td>
+                                <td>
+                                    <button class="mb-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-outline-warning" onclick="deleteFile('{{ file.id }}')">
+                                        <i class="pe-7s-trash btn-icon-wrapper"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endeach
+                    </tbody>
+                </table>
+            @else
+                <p>No files uploaded yet.</p>
+            @endif
+
+            @if (flashMessages.has('success'))
+                <div role="alert" class="text-danger">
+                    {{ flashMessages.get('success') }}
+                </div>
+            @endif
+        </div>
+    </div>
+</div>
 </div>
 
-
 </div>
+</div>
+
+<!-- Include Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+    async function deleteFile(fileId) {
+        try {
+            const response = await axios.delete(`/plagiarism/checker/delete/${fileId}`);
+            if (response.status === 200) {
+                console.log('File deleted successfully.');
+                window.location.reload(); // Refresh the page after successful deletion
+            }
+        } catch (error) {
+            console.error('Error deleting file:', error.message);
+        }
+    }
+</script>
+
 @endsection
