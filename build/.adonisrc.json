@@ -31,6 +31,9 @@
     "@adonisjs/bouncer",
     "@adonisjs/mail"
   ],
+  "bodyparser": {
+    "multipart": true
+  },
   "metaFiles": [
     {
       "pattern": "public/**",
@@ -58,5 +61,5 @@
   "testProviders": [
     "@japa/preset-adonis/TestsProvider"
   ],
-  "lastCompiledAt": "2023-12-11T00:36:18.324Z"
+  "lastCompiledAt": "2023-12-26T14:35:35.574Z"
 }

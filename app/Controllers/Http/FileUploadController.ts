@@ -1,9 +1,8 @@
 'use strict';
 import Application from '@ioc:Adonis/Core/Application'
-import Route from '@ioc:Adonis/Core/Route'
 import File from 'App/Models/File'
 import Drive from '@ioc:Adonis/Core/Drive'
-const fs = require('fs');
+
 
 class FileUploadController {
  async upload({ request, response, session, }) {

@@ -1,0 +1,90 @@
+@layout('layout')
+
+@section('title', 'Teacher Portal')
+@endsection
+@section('content')
+<div class="app-main__inner">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-users icon-gradient bg-mean-fruit"></i>
+                </div>
+                <div>Plagiarism Detection Tool
+                    <div class="page-title-subheading">You can upload the files of students to get the plagiarism report of them.
+                    </div>
+                </div>
+            </div>
+            <!-- Remove the existing buttons or replace them with teacher-specific functionalities -->
+        </div>
+    </div>
+
+    <div class="tabs-animation">
+        <div class="row">
+            <!-- File Upload Section -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <!-- Your file upload content -->
+                    <!-- ... -->
+                </div>
+            </div>
+
+            <!-- Section for generating report -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header-tab card-header">
+                        <!-- Your report generation content -->
+                        <!-- ... -->
+                    </div>
+                    <div class="card-body">
+                        <!-- Your progress bar content -->
+                        <!-- ... -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Display List of Uploaded Files and Reports -->
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header-tab card-header">
+                        <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                            <i class="header-icon lnr-list icon-gradient bg-happy-green"></i>
+                            List of Uploaded Files and Reports
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Assignment Name</th>
+                                        <th>Student Name</th>
+                                        <th>Similarity Percentage</th>
+                                        <!-- Add more columns as needed -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Dummy data -->
+                                    <tr>
+                                        <td>Assignment 1</td>
+                                        <td>Student A</td>
+                                        <td>85%</td>
+                                        <!-- Add more cells for other data -->
+                                    </tr>
+                                    <!-- Add more dummy data rows as needed -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Optional flash message display -->
+                        <!-- ... -->
+
+                        <!-- Optional success message display -->
+                        <!-- ... -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

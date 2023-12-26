@@ -3,6 +3,7 @@
 @section('title', 'Teacher Portal')
 @endsection
 @section('content')
+
 <div class="app-main__inner">
     <div class="app-page-title">
         <div class="page-title-wrapper">
@@ -10,81 +11,308 @@
                 <div class="page-title-icon">
                     <i class="pe-7s-users icon-gradient bg-mean-fruit"></i>
                 </div>
-                <div>Plagiarism Detection Tool
-                    <div class="page-title-subheading">You can upload the files of students to get the plagiarism report of them.
+                <div>Plagiarism Report
+                    <div class="page-title-subheading">The report for the specified Assignment is Shown below.
                     </div>
                 </div>
             </div>
-            <!-- Remove the existing buttons or replace them with teacher-specific functionalities -->
         </div>
     </div>
 
     <div class="tabs-animation">
+     <div class="row">
+     <div class="col-md-12">
+              <div class="mb-3 card text-white card-body" style="background-color: rgb(51, 51, 51); border-color: rgb(51, 51, 51);">
+    <h5 class="text-white card-title">Report Info</h5>
+    <div class="report-info">
+        <p>
+            <i class="mdi-clock-outline mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--start" aria-hidden="true" aria-describedby="v-tooltip-294"></i>
+            December 7, 2023 at 3:04 PM GMT+5
+        </p>
+        <p>
+            <i class="mdi-file-outline mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--start" aria-hidden="true" aria-describedby="v-tooltip-296"></i>
+            169 submissions
+        </p>
+        <p>
+            <i class="mdi-xml mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--start" aria-hidden="true" aria-describedby="v-tooltip-298"></i>
+            9 labels detected
+        </p>
+    </div>
+    <p>With supporting text below as a natural lead-in to additional content.</p>
+</div>
+
+     </div>
+     </div>
         <div class="row">
-            <!-- File Upload Section -->
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <!-- Your file upload content -->
-                    <!-- ... -->
-                </div>
-            </div>
-
-            <!-- Section for generating report -->
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header-tab card-header">
-                        <!-- Your report generation content -->
-                        <!-- ... -->
-                    </div>
-                    <div class="card-body">
-                        <!-- Your progress bar content -->
-                        <!-- ... -->
-                    </div>
-                </div>
-            </div>
-
             <!-- Display List of Uploaded Files and Reports -->
-            <div class="col-md-8">
+          <div class="col-md-6">
+    <div class="card">
+        <div class="card-header-tab card-header">
+            <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                <i class="header-icon lnr-list icon-gradient bg-happy-green"></i>
+                List of Uploaded Files and Reports
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Submission Name</th>
+                            <th>Label</th>
+                            <th>Similarity Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Row 1 -->
+                        <tr>
+                            <td>Anthony Longbottom.py</td>
+                            <td>Hufflepuff</td>
+                            <td class="text-center" style="width: 200px;">
+                                <div class="widget-content p-0">
+                                    <div class="widget-content-outer">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left pr-2">
+                                                <div class="widget-numbers fsize-1 text-danger">87%</div>
+                                            </div>
+                                            <div class="widget-content-right w-100">
+                                                <div class="progress-bar-xs progress">
+                                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" style="width: 87%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                       <!-- Row 2 -->
+<tr>
+    <td>Bartemius Edgecombe.py</td>
+    <td>Slytherin</td>
+    <td class="text-center" style="width: 200px;">
+        <div class="widget-content p-0">
+            <div class="widget-content-outer">
+                <div class="widget-content-wrapper">
+                    <div class="widget-content-left pr-2">
+                        <div class="widget-numbers fsize-1 text-danger">87%</div>
+                    </div>
+                    <div class="widget-content-right w-100">
+                        <div class="progress-bar-xs progress">
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" style="width: 87%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+
+<!-- Repeat this structure for the remaining 18 rows with different data -->
+
+<!-- Row 3 -->
+<tr>
+    <td>Morfin McGonagall.py</td>
+    <td>Hufflepuff</td>
+    <td class="text-center" style="width: 200px;">
+        <div class="widget-content p-0">
+            <div class="widget-content-outer">
+                <div class="widget-content-wrapper">
+                    <div class="widget-content-left pr-2">
+                        <div class="widget-numbers fsize-1 text-warning">66%</div>
+                    </div>
+                    <div class="widget-content-right w-100">
+                        <div class="progress-bar-xs progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" style="width: 66%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+
+<!-- Row 4 -->
+<tr>
+    <td>James Johnson.py</td>
+    <td>Slytherin</td>
+    <td class="text-center" style="width: 200px;">
+        <div class="widget-content p-0">
+            <div class="widget-content-outer">
+                <div class="widget-content-wrapper">
+                    <div class="widget-content-left pr-2">
+                        <div class="widget-numbers fsize-1 text-warning">66%</div>
+                    </div>
+                    <div class="widget-content-right w-100">
+                        <div class="progress-bar-xs progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" style="width: 66%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+
+<!-- Row 5 -->
+<tr>
+    <td>Rufus Greyback.py</td>
+    <td>Slytherin</td>
+    <td class="text-center" style="width: 200px;">
+        <div class="widget-content p-0">
+            <div class="widget-content-outer">
+                <div class="widget-content-wrapper">
+                    <div class="widget-content-left pr-2">
+                        <div class="widget-numbers fsize-1 text-warning">64%</div>
+                    </div>
+                    <div class="widget-content-right w-100">
+                        <div class="progress-bar-xs progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" style="width: 64%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+
+<!-- Row 6 -->
+<tr>
+    <td>Garrick Pettigrew.py</td>
+    <td>Slytherin</td>
+    <td class="text-center" style="width: 200px;">
+        <div class="widget-content p-0">
+            <div class="widget-content-outer">
+                <div class="widget-content-wrapper">
+                    <div class="widget-content-left pr-2">
+                        <div class="widget-numbers fsize-1 text-warning">64%</div>
+                    </div>
+                    <div class="widget-content-right w-100">
+                        <div class="progress-bar-xs progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" style="width: 64%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+
+<!-- Row 7 -->
+<tr>
+    <td>Septima Spinnet.py</td>
+    <td>Professors</td>
+    <td class="text-center" style="width: 200px;">
+        <div class="widget-content p-0">
+            <div class="widget-content-outer">
+                <div class="widget-content-wrapper">
+                    <div class="widget-content-left pr-2">
+                        <div class="widget-numbers fsize-1 text-warning">57%</div>
+                    </div>
+                    <div class="widget-content-right w-100">
+                        <div class="progress-bar-xs progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+
+<!-- Row 8 -->
+<tr>
+    <td>Helena Bulstrode.py</td>
+    <td>Slytherin</td>
+    <td class="text-center" style="width: 200px;">
+        <div class="widget-content p-0">
+            <div class="widget-content-outer">
+                <div class="widget-content-wrapper">
+                    <div class="widget-content-left pr-2">
+                        <div class="widget-numbers fsize-1 text-warning">57%</div>
+                    </div>
+                    <div class="widget-content-right w-100">
+                        <div class="progress-bar-xs progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+
+<!-- Row 9 -->
+<tr>
+    <td>Cornelius Bell.py</td>
+    <td>Hufflepuff</td>
+    <td class="text-center" style="width: 200px;">
+        <div class="widget-content p-0">
+            <div class="widget-content-outer">
+                <div class="widget-content-wrapper">
+                    <div class="widget-content-left pr-2">
+                        <div class="widget-numbers fsize-1 text-warning">56%</div>
+                    </div>
+                    <div class="widget-content-right w-100">
+                        <div class="progress-bar-xs progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100" style="width: 56%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+
+<!-- Row 10 -->
+<tr>
+    <td>Ignotus Creevey.py</td>
+    <td>Hufflepuff</td>
+    <td class="text-center" style="width: 200px;">
+        <div class="widget-content p-0">
+            <div class="widget-content-outer">
+                <div class="widget-content-wrapper">
+                    <div class="widget-content-left pr-2">
+                        <div class="widget-numbers fsize-1 text-warning">56%</div>
+                    </div>
+                    <div class="widget-content-right w-100">
+                        <div class="progress-bar-xs progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100" style="width: 56%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+
+<!-- Continue adding rows with similar structure -->
+
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+              <div class="col-md-6">
                 <div class="card">
                     <div class="card-header-tab card-header">
                         <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
                             <i class="header-icon lnr-list icon-gradient bg-happy-green"></i>
-                            List of Uploaded Files and Reports
+                           Similarity Threshold
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Assignment Name</th>
-                                        <th>Student Name</th>
-                                        <th>Similarity Percentage</th>
-                                        <!-- Add more columns as needed -->
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Dummy data -->
-                                    <tr>
-                                        <td>Assignment 1</td>
-                                        <td>Student A</td>
-                                        <td>85%</td>
-                                        <!-- Add more cells for other data -->
-                                    </tr>
-                                    <!-- Add more dummy data rows as needed -->
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <!-- Optional flash message display -->
-                        <!-- ... -->
-
-                        <!-- Optional success message display -->
-                        <!-- ... -->
+                      <div data-v-c49c1244="" class="v-card-text"><div data-v-c49c1244=""><svg width="600" height="400"><g transform="translate(60,10)"><g transform="translate(0,335)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle" class="d3-ticks"><path class="domain" stroke="currentColor" d="M0.5,6V0.5H633.5V6"></path><g class="tick" opacity="1" transform="translate(0.5,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">0%</text></g><g class="tick" opacity="1" transform="translate(63.800000000000004,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">10%</text></g><g class="tick" opacity="1" transform="translate(127.10000000000001,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">20%</text></g><g class="tick" opacity="1" transform="translate(190.4,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">30%</text></g><g class="tick" opacity="1" transform="translate(253.70000000000002,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">40%</text></g><g class="tick" opacity="1" transform="translate(317,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">50%</text></g><g class="tick" opacity="1" transform="translate(380.3,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">60%</text></g><g class="tick" opacity="1" transform="translate(443.59999999999997,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">70%</text></g><g class="tick" opacity="1" transform="translate(506.90000000000003,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">80%</text></g><g class="tick" opacity="1" transform="translate(570.2,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">90%</text></g><g class="tick" opacity="1" transform="translate(633.5,0)"><line stroke="currentColor" y2="6"></line><text fill="currentColor" y="9" dy="0.71em">100%</text></g><text class="d3-label" transform="translate(316.5, 50)">Similarity</text></g><g fill="none" font-size="10" font-family="sans-serif" text-anchor="end" class="d3-ticks"><path class="domain" stroke="currentColor" d="M-6,335.5H0.5V0.5H-6"></path><g class="tick" opacity="1" transform="translate(0,335.5)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">0</text></g><g class="tick" opacity="1" transform="translate(0,291.42105263157896)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">5</text></g><g class="tick" opacity="1" transform="translate(0,247.34210526315792)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">10</text></g><g class="tick" opacity="1" transform="translate(0,203.26315789473685)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">15</text></g><g class="tick" opacity="1" transform="translate(0,159.1842105263158)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">20</text></g><g class="tick" opacity="1" transform="translate(0,115.10526315789473)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">25</text></g><g class="tick" opacity="1" transform="translate(0,71.02631578947368)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">30</text></g><g class="tick" opacity="1" transform="translate(0,26.94736842105264)"><line stroke="currentColor" x2="-6"></line><text fill="currentColor" x="-9" dy="0.32em">35</text></g><text class="d3-label" transform="translate(-55, 202.5) rotate(90)">Amount of files</text></g><rect x="1" transform="translate(0,335)" width="30.650000000000002" height="0" style="fill: rgba(25, 118, 210, 0.25); cursor: pointer;"></rect><rect x="1" transform="translate(31.650000000000002,335)" width="30.650000000000002" height="0" style="fill: rgba(25, 118, 210, 0.25); cursor: pointer;"></rect><rect x="1" transform="translate(63.300000000000004,317.3684210526316)" width="30.65" height="17.631578947368382" style="fill: rgba(25, 118, 210, 0.25); cursor: pointer;"></rect><rect x="1" transform="translate(94.95,255.6578947368421)" width="30.650000000000006" height="79.34210526315789" style="fill: rgba(25, 118, 210, 0.25); cursor: pointer;"></rect><rect x="1" transform="translate(126.60000000000001,158.6842105263158)" width="30.64999999999999" height="176.3157894736842" style="fill: rgba(25, 118, 210, 0.25); cursor: pointer;"></rect><rect x="1" transform="translate(158.25,114.60526315789473)" width="30.650000000000006" height="220.39473684210526" style="fill: rgba(25, 118, 210, 0.25); cursor: pointer;"></rect><rect x="1" transform="translate(189.9,0)" width="30.649999999999977" height="335" style="fill: rgba(25, 118, 210, 0.25); cursor: pointer;"></rect><rect x="1" transform="translate(221.54999999999998,70.52631578947368)" width="30.650000000000034" height="264.4736842105263" style="fill: rgba(25, 118, 210, 0.25); cursor: pointer;"></rect><rect x="1" transform="translate(253.20000000000002,141.05263157894737)" width="30.650000000000006" height="193.94736842105263" style="fill: rgba(25, 118, 210, 0.25); cursor: pointer;"></rect><rect x="1" transform="translate(284.85,290.92105263157896)" width="30.649999999999977" height="44.07894736842104" style="fill: rgb(25, 118, 210); cursor: pointer;"></rect><rect x="1" transform="translate(316.5,264.4736842105263)" width="30.650000000000034" height="70.5263157894737" style="fill: rgb(25, 118, 210); cursor: pointer;"></rect><rect x="1" transform="translate(348.15000000000003,299.7368421052632)" width="30.649999999999977" height="35.26315789473682" style="fill: rgb(25, 118, 210); cursor: pointer;"></rect><rect x="1" transform="translate(379.8,317.3684210526316)" width="30.649999999999977" height="17.631578947368382" style="fill: rgb(25, 118, 210); cursor: pointer;"></rect><rect x="1" transform="translate(411.45,317.3684210526316)" width="30.649999999999977" height="17.631578947368382" style="fill: rgb(25, 118, 210); cursor: pointer;"></rect><rect x="1" transform="translate(443.09999999999997,335)" width="30.650000000000034" height="0" style="fill: rgb(25, 118, 210); cursor: pointer;"></rect><rect x="1" transform="translate(474.75,335)" width="30.650000000000034" height="0" style="fill: rgb(25, 118, 210); cursor: pointer;"></rect><rect x="1" transform="translate(506.40000000000003,335)" width="30.64999999999992" height="0" style="fill: rgb(25, 118, 210); cursor: pointer;"></rect><rect x="1" transform="translate(538.05,317.3684210526316)" width="30.65000000000009" height="17.631578947368382" style="fill: rgb(25, 118, 210); cursor: pointer;"></rect><rect x="1" transform="translate(569.7,335)" width="30.649999999999977" height="0" style="fill: rgb(25, 118, 210); cursor: pointer;"></rect><rect x="1" transform="translate(601.35,335)" width="30.649999999999977" height="0" style="fill: rgb(25, 118, 210); cursor: pointer;"></rect><line x1="649" y1="0" x2="649" y2="335" stroke="black" stroke-width="1" stroke-dasharray="3,3" pointer-events="none" z-index="2" visibility="hidden"></line><text class="d3-ticks" x="657" y="0" dy="0.71em" visibility="hidden">103%</text><line class="line" x1="303.84" y1="0" x2="303.84" y2="335" stroke="black" stroke-width="1" pointer-events="none" z-index="2"></line><text class="line-text d3-ticks" x="303.84" y="0" dy="0.71em" dx="8">Threshold</text></g></svg></div></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 @endsection

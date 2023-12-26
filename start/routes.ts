@@ -17,8 +17,24 @@
 | import './routes/customer''
 |
 */
-
+import File from 'App/Models/File'
 import Route from '@ioc:Adonis/Core/Route'
+
+
+
+async function report({ view }) {
+  const files = await File.all();
+
+  const filePaths = files.map((file) => file.path);
+
+
+  return view.render('report', {
+      // Pass any necessary data to the view
+
+  });
+}
+
+
 
 Route.get('/', async ({  auth,response }) => {
 
@@ -48,7 +64,7 @@ Route.group(() => {
   Route.get('/assignments/dashboard','DashboardController.index').as("Dashbaord")
 
   Route.get('/plagiarism/checker','DashboardController.plagiarism')
-  Route.get('/plagiarism/reports','DashboardController.report')
+  Route.get('/plagiarism/reports',report)
   Route.post('/plagiarism/checker/upload', 'FileUploadController.upload')
   Route.delete('/plagiarism/checker/delete/:id', 'FileUploadController.delete');
   Route.get('/clients','ClientsController.index')

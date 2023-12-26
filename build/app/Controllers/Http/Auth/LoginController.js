@@ -9,7 +9,7 @@ class LoginController {
         try {
             let au = await auth.use("web").attempt(email, password);
             console.log(au);
-            return response.redirect('/done');
+            return response.redirect('/assignments/dashboard');
         }
         catch (error) {
             session.flash('form', 'Your username, email, or password is incorrect');

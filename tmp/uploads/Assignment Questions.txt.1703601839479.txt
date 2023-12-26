@@ -1,0 +1,314 @@
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
+
+import java.util.*;
+
+public class Question1 {
+    public static boolean contains(int[] array, int number, int entered)
+    {
+        for (int i = 0; i < entered; i++)
+        {
+            if (array[i] == number) return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args)
+    {
+        Scanner inpuit = new Scanner(System.in);
+        System.out.print("Enter ten numbers: ");
+        int[] array = new int[10];
+        int uniques = 0;
+        for (int i = 0; i < 10; i++)
+        {
+            int in = inpuit.nextInt();
+            boolean al = contains(array, in, uniques);
+
+            if (!al)
+            {
+                array[uniques++] = in;
+            }
+        }
+        System.out.printf("The number of distinct numbers is: %d %n", uniques);
+        System.out.printf("The distinct numbers are: ");
+
+        for (int i = 0; i < uniques; i++)
+        {
+            System.out.print(array[i] + " ");
+        }
+    }
+}
+
+
+
+
+---------------------------------
+
+import java.util.Scanner;
+
+public class Question2 {
+    public static boolean contains(int[] array, int number, int entered) {
+        for (int i = 0; i < entered; i++) {
+            if (array[i] == number) return true;
+        }
+        return false;
+    }
+
+    public static int[] eliminateDuplicates(int[] list) {
+        int uniques = 0;
+        for (int i = 0; i < list.length; i++) {
+            boolean isUnique = !contains(list, list[i], uniques);
+            if (isUnique) {
+                uniques++;
+            }
+        }
+
+        int[] uniquesArray = new int[uniques];
+        uniques = 0;
+        for (int i = 0; i < list.length; i++) {
+            boolean isUnique = !contains(list, list[i], uniques);
+            if (isUnique) {
+                uniquesArray[uniques++] = list[i];
+            }
+        }
+        return uniquesArray;
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter ten numbers: ");
+        int[] array = new int[10];
+
+        for (int i = 0; i < 10; i++) {
+            array[i] = input.nextInt();
+        }
+        int[] nonDupArr = eliminateDuplicates(array);
+
+        System.out.printf("The distinct numbers are: ");
+
+        for (int i = 0; i < nonDupArr.length; i++) {
+            System.out.print(nonDupArr[i] + " ");
+        }
+    }
+}
+
+
+
+-------------------------------------
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Question3 {
+    public static boolean isSorted(int[] list){
+        for(int i=1; i<list.length;i++){
+            if(list[i] < list[i-1]){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static int[] sortArray(int[] array){
+        int[] tempA= array.clone();
+
+        for(int i =0; i<array.length-1;++i){
+            for(int j=i+1; j<array.length; ++j){
+                if(tempA[i]> tempA[j]){
+                    int temp= tempA[i];
+                    tempA[i]= tempA[j];
+                    tempA[j]= temp;
+                }
+            }
+        }
+        return tempA;
+    }
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter ten numbers: ");
+        int[] array = new int[10];
+        for (int i=0; i<array.length;++i){
+                array[i]= input.nextInt();
+        }
+        if(isSorted(array)){
+            System.out.println("The array is sorted.");
+        }else{
+            int[]  sArray= sortArray(array);
+            System.out.println(Arrays.toString(sArray));
+        }
+
+
+    }
+}
+
+
+
+-----------------------------
+
+import java.util.Scanner;
+
+public class Question4 {
+    public static  boolean hasFourConsective(int[] values){
+        for(int i=0; i<values.length; ++i){
+            if(values[i] == values[i+1]&& values[i+1]==values[i+2] &&values[i+2]==values[i+3]){
+                return true;
+            }
+        }
+        return  false;
+    }
+    public static void main(String[] args)
+    {
+        Scanner in= new Scanner(System.in);
+        System.out.print("Enter the number of integers you want to enter: ");
+        int leng= in.nextInt();
+        int[] arr= new int[leng];
+        System.out.print("Enter the values: ");
+        for(int i=0; i< leng ; ++i){
+            arr[i]=in.nextInt();
+        }
+        System.out.printf("The series had four consective numbers: %b" , hasFourConsective(arr));
+
+    }
+}
+
+
+
+------------------------------
+
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Question5 {
+    public static boolean isSorted(int[] list)
+    {
+        for (int i = 1; i < list.length; i++)
+        {
+            if (list[i] < list[i - 1])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static int[] sortArray(int[] array)
+    {
+        int[] tempA = array.clone();
+
+        for (int i = 0; i < array.length - 1; ++i)
+        {
+            for (int j = i + 1; j < array.length; ++j)
+            {
+                if (tempA[i] > tempA[j])
+                {
+                    int temp = tempA[i];
+                    tempA[i] = tempA[j];
+                    tempA[j] = temp;
+                }
+            }
+        }
+        return tempA;
+    }
+
+    public static int[] mergeArrays(int[] array1, int[] array2)
+    {
+        int len1 = array1.length;
+        int len2 = array2.length;
+
+        int[] merged = new int[len1 + len2];
+        for (int i = 0; i < len1; i++)
+        {
+            merged[i] = array1[i];
+        }
+        for (int i = 0; i < len2; i++)
+        {
+            merged[len1 + i] = array2[i];
+        }
+        merged = sortArray(merged);
+        return merged;
+    }
+
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        while (true)
+        {
+            System.out.print("Enter the list 1:");
+            int num = in.nextInt();
+            int[] list1 = new int[num];
+            for (int i = 0; i < num; i++)
+            {
+                list1[i] = in.nextInt();
+            }
+            System.out.print("Enter the list 2:");
+            int num2 = in.nextInt();
+            int[] list2 = new int[num2];
+            for (int i = 0; i < num2; i++)
+            {
+                list2[i] = in.nextInt();
+            }
+            if (isSorted(list1) && isSorted(list2))
+            {
+                int[] mergedlist = mergeArrays(list1, list2);
+                System.out.println(Arrays.toString(mergedlist));
+
+            } else
+            {
+                continue;
+            }
+        }
+    }
+}
+
+
+
+-------------------------
+
+
+
+import java.util.Scanner;
+
+public class Question6 {
+    public static void main(String[] args)
+    {
+        int[][] mat1 = {{1,2}, {3,4},{6,7}};
+        int[][] mat2 = {{5,6,7}, {9,8,7}};
+
+        int[][] mul= multiplyMatrix(mat1, mat2,3,2,2,3);
+        for(int[] row : mul){
+            for(int col: row){
+                System.out.print(col +" ");
+            }
+            System.out.printf("%n");
+        }
+
+    }
+
+    public static int[][] multiplyMatrix(int[][] mat1, int[][] mat2, int r1, int r2, int c1, int c2)
+    {
+        if (r1 == c2)
+        {
+            int[][] multiplied= new int[r1][c2];
+
+            for (int row = 0; row < r1; ++row)
+            {
+                for (int col = 0; col < c2; ++col)
+                {
+                    for (int col1 = 0; col1 < c1; ++col1)
+                    {
+                        int num1= mat1[row][col1];
+                        int num2= mat2[col1][col];
+                        multiplied[row][col] += num2*num1;
+                    }
+                }
+            }
+            return multiplied;
+        }
+        return new int[][]{{}};
+    }
+}
+
+
+----------------
