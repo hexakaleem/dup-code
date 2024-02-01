@@ -1,116 +1,103 @@
-DupCode is a plagiarism detection system designed specifically for programming assignments submitted by students in educational institutions. Its primary purpose is to assist instructors in assessing code submissions while detecting instances of plagiarism or unauthorized code similarity. 
+# DupCode - Code Plagiarism Detection System
 
-The main functionalities of the system are:
-**Profile Management**: The users will be able to manage their profile. They can edit, update and delete their accounts.
-**Admin Portal:** The admin will be able to create, delete and update the information of users.
-**Automatic Plagiarism Detection:** System will carry out the plagiarism detection of the submitted assignment automatically. The teacher can disable this feature from their portal. 
-**Code Snippets Exclusion:** They system will exclude the allowed code which could be legitimate to copy from plagiarism checking and will provide accurate results.
-**Pattern Matching:** The plagiarism detection algorithm used will be able to detect the pattern of the code and will detect if the code has been modified by changing the identifiers names.
-**Assignment Management**: DupCode integrates the Assignment submission system along with plagiarism detection to provide both the facilities at one place.
+## Introduction
 
-** Modules**
-	(Module 1): Admin Portal
-The admin Portal will provide the centralized interface for managing the Code Plagiarism System. Admin can manage the user accounts, access control and system settings. 
+DupCode is a comprehensive plagiarism detection system tailored for programming assignments submitted by students in educational institutions. Its main goal is to support instructors in evaluating code submissions by detecting instances of plagiarism or unauthorized code similarity. The system comes equipped with a range of features to streamline the process of code assessment and enhance the overall integrity of academic assignments.
 
-FE-1: Admin Sign In
-FE-2: Change Password
-FE-2: Forget Password
-FE-3: Manage students, classes, and teachers.
-FE-4: Update Information
-FE-5: Register student to class.
-FE-6: Assign class to teacher.
-FE-7: View Analytics
+## Features
 
-	(Module 2): Profiling Management
-This module focuses on account management of Teachers and Students. Teachers can login to their portal and perform their allowed tasks while students can access their own portal.
-FE-1: Users Registration.
-FE-2: Generate Unique ID.
-FE-3: Generate Captcha.
-FE-4: Forget Password
-FE-5: Students and Teachers can Sign In.
-FE-6: Change Password
-FE-7: View Profile.
-FE-8: Change their profile info.
-FE-9: Sign Out.
+### 1. Profile Management
 
+- **User Registration:** Users can easily register and manage their accounts.
+- **Profile Editing:** Users can edit, update, and delete their profiles.
+- **Password Management:** Change and reset password functionalities.
+- **Role Management:** Admins can manage students, classes, and teachers.
+- **Analytics:** Admins can view analytics for system usage and performance.
 
-	(Module 3): Instructors Portal
-This module allows the instructors to create classrooms and add students to it. Instructors can create and manage assignments.
+### 2. Admin Portal
 
-FE-1: View Classes.
-FE-2: Add assignments. 
-FE-3: Edit assignments.
-FE-4: Delete assignments.
-FE-5: Initiate Plagiarism Checking
-FE-6: Create Plagiarism Checking Configuration
-FE-7: Perform Side-By-Side Comparison
-FE-8: Get Plagiarism Report
-FE-8: Manage Profile
+- **Sign In:** Admins can securely sign in to the central portal.
+- **Change Password:** Admins can update their passwords.
+- **Forget Password:** Password recovery functionality.
+- **User Management:** Admins can manage students, classes, and teachers.
+- **Analytics:** View system analytics and usage.
 
-	(Module 4): Student Portal
-This module will provide an interface for the students to do their activities. It includes:
-FE-1: View Classes.
-FE-2: View Assignments.
-FE-3: Attach files to assignment.
-FE-4: Submit Assignment.
-FE-5: View Assignment plagiarism Report.
-FE-6: View profile.
+### 3. Profiling Management
 
-	(Module 5): Report Management Module
-This module handles plagiarism reports and stores and organizes the reports.
+- **User Registration:** Teachers and students can register.
+- **Unique ID Generation:** System generates unique IDs for users.
+- **Captcha Generation:** Ensures secure user registration.
+- **Profile Viewing and Editing:** Users can view and edit their profiles.
+- **Sign Out:** Users can securely sign out.
 
-FE-1: Reports.
-FE-2: Generate Report for Student.
-FE-3: Generate Report of all Submitted assignments by students for teacher.
-FE-4: Show Report.
-FE-4: Draw Result Chart.
-FE-5: Export Report.
+### 4. Instructors Portal
 
-	(Module 6): Plagiarism Detection Module
-This module manages computational tasks and conducts analysis on uploaded files to prepare source code for comparison.
-FE-1: Extracts and parses the uploaded code.
-FE-2: Analyze syntax and structure.
-FE-3: Compare similarity.
-FE-4: Identifies patterns using pattern matching techniques.
-FE-5: Stores analysis results in the database.
-FE-6: Excludes specified code from matching based on the exclusion list.
-FE-7: Generates and provides a plagiarism report.
+- **Class Management:** Instructors can view and manage classes.
+- **Assignment Management:** Create, edit, and delete assignments.
+- **Plagiarism Checking:** Initiate plagiarism checking and view reports.
+- **Profile Management:** Instructors can manage their profiles.
 
-(Module 7): Assignment Management Module
-This module lists all assignments and enables teachers to create, modify, and oversee programming tasks.
+### 5. Student Portal
 
-FE-1: Allows assignment creation for specified classrooms and courses.
-FE-2: Permits editing assignments and managing their deadlines.
-FE-3: Facilitates student assignment uploads.
-FE-4: Automatically saves assignments in the database.
-FE-5: Enables automatic plagiarism checks for assignments.
+- **Class and Assignment Viewing:** Students can view classes and assignments.
+- **File Attachment:** Attach files to assignments.
+- **Assignment Submission:** Submit assignments securely.
+- **Plagiarism Report Viewing:** View plagiarism reports for submitted assignments.
+- **Profile Management:** Students can view and manage their profiles.
 
-(Module 8): Plagiarism Configuration Module
+### 6. Report Management
 
-This module acts as a tool for parameter selection during code comparison, allowing teachers to set specific rules and parameters as per assignment requirements and student proficiency.
+- **Report Generation:** Generate plagiarism reports for students and teachers.
+- **Result Chart:** Visual representation of plagiarism detection results.
+- **Export Reports:** Export reports for further analysis.
 
-FE-1: Enables the selection of various plagiarism detection algorithms.
-FE-2: Provides language selection options.
-FE-3: Allows setting similarity thresholds.
-FE-4: Defines code exemptions.
-FE-5: Sets code filters or rules to exclude specific libraries or template codes.
-FE-6: Saves configurations in the database for future use.
+### 7. Plagiarism Detection Module
 
-**Installation Guide: **
+- **Code Analysis:** Extracts, parses, and analyzes uploaded code.
+- **Syntax and Structure Analysis:** Examines code syntax and structure.
+- **Similarity Comparison:** Compares code similarity using various algorithms.
+- **Pattern Matching:** Identifies patterns using advanced pattern matching techniques.
+- **Result Storage:** Stores analysis results in the database.
+- **Code Exclusion:** Excludes specified code from matching based on the exclusion list.
+- **Plagiarism Report Generation:** Generates and provides detailed plagiarism reports.
 
-1.	Download Node JS
-2.	Install the Nodejs in your machine.
-3.	Download PostgreSQL database engine and install it.
-4.	Configure and set up the database engine.
-5.	Clone this repository: https://github.com/hexakaleem/dup-code
-6.	Go to the main directory where the packages.json is present
-7.	Change variables in .env file.
-8.	Open command line and run:
-npm install
-This will install all the modules required by the software
-9.	To setup database: run
-	adonis migration:run
-10.	To register admin run:
-	node ace make:admin
-11.	To start the server run:
-node ace serve --watch
+### 8. Assignment Management Module
+
+- **Assignment Creation:** Allows teachers to create assignments for specific classes and courses.
+- **Deadline Management:** Permits editing assignments and managing their deadlines.
+- **Student Uploads:** Facilitates student assignment uploads.
+- **Automatic Plagiarism Checks:** Enables automatic plagiarism checks for assignments.
+
+### 9. Plagiarism Configuration Module
+
+- **Algorithm Selection:** Enables the selection of various plagiarism detection algorithms.
+- **Language Options:** Provides language selection options.
+- **Similarity Thresholds:** Allows setting similarity thresholds.
+- **Code Exemptions:** Defines code exemptions for legitimate code.
+- **Code Filters:** Sets code filters or rules to exclude specific libraries or template codes.
+- **Configuration Saving:** Saves configurations in the database for future use.
+
+## Installation Guide
+
+1. Download and install Node JS.
+2. Download and install PostgreSQL database engine.
+3. Configure and set up the database engine.
+4. Clone the repository: [DupCode Repository](https://github.com/hexakaleem/dup-code).
+5. Navigate to the main directory with packages.json.
+6. Change variables in the .env file.
+7. Open the command line and run: `npm install` to install required modules.
+8. Set up the database by running: `adonis migration:run`.
+9. Register admin by running: `node ace make:admin`.
+10. Start the server with: `node ace serve --watch`.
+
+Ensure that the necessary dependencies and configurations are in place before running the system.
+
+## Contributors
+
+- Hexa Kaleem 
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).
+
+Feel free to contribute and make DupCode even better!
